@@ -1,38 +1,119 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* .game {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 50px;
+  font-family: sans-serif;
+}
+
+.board-row {
+  display: flex;
+}
+
+.square {
+  background: #fff;
+  border: 1px solid #999;
+  font-size: 40px;
+  font-weight: bold;
+  line-height: 60px;
+  height: 60px;
+  width: 60px;
+  margin-right: -1px;
+  margin-top: -1px;
+  padding: 0;
+  text-align: center;
+  cursor: pointer;
+}
+.status {
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: bold
+} */
+
+body {
+  background-color: #ccefff; /* холодный голубой */
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
 }
 
-.App-link {
-  color: #61dafb;
+.game {
+  background-color: #e0e0e0; /* грязно-серый */
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+  text-align: center;
 }
 
-@keyframes App-logo-spin {
+h1 {
+  color: #ff6f00; /* ярко-оранжевый */
+  text-shadow: 1px 1px #999;
+  margin-bottom: 20px;
+}
+
+.board-row {
+  display: flex;
+  justify-content: center;
+}
+
+.square {
+  width: 90px;
+  height: 90px;
+  margin: 5px;
+  background-color: #4caf50; /* зелёный как кактус */
+  color: #333;
+  font-size: 2.5rem;
+  font-weight: bold;
+  border: 2px solid #ff9800; /* ярко-оранжевая рамка */
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.square:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px #ff9800;
+}
+
+.square.X {
+  color: #388e3c; /* насыщенно-зелёный */
+}
+
+.square.O {
+  color: #f57c00; /* тёплый оранжевый */
+}
+
+/* Победа */
+.winning {
+  animation: glow 1s infinite alternate;
+  border-color: #ff5722;
+  box-shadow: 0 0 15px #ff5722;
+}
+
+@keyframes glow {
   from {
-    transform: rotate(0deg);
+    background-color: #aed581;
   }
   to {
-    transform: rotate(360deg);
+    background-color: #ffd180;
   }
+}
+
+.reset-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #ff9800;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.reset-button:hover {
+  background-color: #ff6f00;
 }
